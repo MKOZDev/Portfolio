@@ -5,22 +5,35 @@ import Image from "next/image";
 import styles from "./Hero.module.css";
 import Wrapper from "@/components/layout/Wrapper";
 import SkillCard from "@/components/ui/SkillCard";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(() =>
+    typeof window !== "undefined" ? window.matchMedia(query).matches : false,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const handler = (e) => setMatches(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [query]);
+  return matches;
+}
 export default function Hero() {
   const ref = useRef(null);
+  const isSmall = useMediaQuery("(max-width: 380px)");
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 600]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, isSmall ? 0 : 600]);
   return (
     <motion.section
       ref={ref}
       style={{ y }}
-      className={`${styles.hero} py-64 flex inline-center relative overflow-hidden min-h-[90vh]`}
+      className={`${styles.hero} py-64 flex inline-center relative overflow-hidden min-h-[90vh] max-sm:py-0 max-sm:min-h-screen`}
     >
       <div className="absolute pointer-events-none top-0 right-0 w-96 h-96 bg-bg-main/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob section-fade visible"></div>
       <div className="absolute pointer-events-none bottom-0 left-0 w-96 h-96 bg-bg-main/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob section-fade visible"></div>
