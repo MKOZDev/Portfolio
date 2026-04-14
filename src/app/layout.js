@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -25,7 +26,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-poppins">{children}</body>
+      <body className="min-h-full flex flex-col font-poppins">
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid={process.env.NEXT_PUBLIC_COOKIEBOT_ID}
+          data-blockingmode="auto"
+          type="text/javascript"
+        ></Script>
+        {children}
+      </body>
     </html>
   );
 }

@@ -9,19 +9,19 @@ export const projectsItems = [
   },
   {
     id: "2",
-    title: "Flixvan",
-    description: "Strona internetowa dla brokera samochodowe",
-    image: "page2.png",
-    tech: ["HTML", "CSS", "Wordpress", "PHP", "JavaScript"],
-    link: "https://flixvan.com/",
-  },
-  {
-    id: "3",
     title: "Słowa na papierze",
     description: "Strona internetowa dla osoby, która oferuje pomoc naukową.",
     image: "page5.png",
     tech: ["HTML", "CSS", "PHP", "JavaScript"],
     link: "https://slowanapapierze.pl/",
+  },
+  {
+    id: "3",
+    title: "Flixvan",
+    description: "Strona internetowa dla brokera samochodowe",
+    image: "page2.png",
+    tech: ["HTML", "CSS", "Wordpress", "PHP", "JavaScript"],
+    link: "https://flixvan.com/",
   },
   // {
   //   id: "4",

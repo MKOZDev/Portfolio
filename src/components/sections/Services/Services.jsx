@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 z-2 bg-white max-sm:py-12">
+    <section id="services" className="relative py-24 z-2 bg-white max-sm:py-12">
       <Wrapper>
         <SectionHeading
           title="Jak mogę pomóc ?"

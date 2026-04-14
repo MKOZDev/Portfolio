@@ -14,7 +14,7 @@ export default function Header() {
     >
       <Wrapper>
         <div className="flex justify-between items-center h-20 max-sm:h-13">
-          <p className="text-xl font-bold tracking-wider flex items-center">
+          <p className="text-xl grow font-bold tracking-wider flex items-center">
             MKOZ<span className="text-blue">Dev</span>.
           </p>
 
