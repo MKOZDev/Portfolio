@@ -8,7 +8,7 @@ export default function Experience({}) {
   const uniqueTech = [...new Set(allTech)];
   return (
     <>
-      <section className="py-24 bg-bg-gray max-sm:py-12">
+      <section id="experience" className="py-24 bg-bg-gray max-sm:py-12">
         <Wrapper className="grid grid-cols-2 max-lg:grid-cols-1 gap-16 items-center max-sm:gap-8">
           <div>
             <SectionHeading
