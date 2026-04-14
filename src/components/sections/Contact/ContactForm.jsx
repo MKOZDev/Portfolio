@@ -45,7 +45,7 @@ export default function ContactForm() {
     >
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          Imię i nazwisko
+          Imię i nazwisko *
         </label>
         <input
           type="text"
@@ -73,19 +73,19 @@ export default function ContactForm() {
       </div>
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          Wiadomość
+          Wiadomość *
         </label>
         <textarea
           name="message"
           placeholder="Wiadomość"
           value={form.message}
           onChange={handleChange}
-          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 h-32 py-3 focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue transition-all"
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 h-32 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue transition-all"
           required
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 mb-6">
         <p className="block text-sm font-medium text-gray-700 mb-2">
           Szacowany budżet
         </p>
@@ -111,6 +111,20 @@ export default function ContactForm() {
           ))}
         </div>
       </div>
+      <label className="flex items-start gap-2 text-sm text-gray-600">
+        <input type="checkbox" required className="mt-1" />
+        <span>
+          Zgadzam się na przetwarzanie moich danych osobowych zgodnie z{" "}
+          <a
+            href="/polityka-prywatnosci.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Polityką Prywatności
+          </a>
+        </span>
+      </label>
 
       <button
         type="submit"
