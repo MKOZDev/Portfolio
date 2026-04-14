@@ -42,3 +42,11 @@ html {
 body {
   font-family: "Poppins";
 }
+section {
+  scroll-margin-top: 5rem;
+}
+@media (max-width: 640px) {
+  section {
+    scroll-margin-top: 3.2rem;
+  }
+}
