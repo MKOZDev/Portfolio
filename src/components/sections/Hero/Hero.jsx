@@ -21,7 +21,7 @@ function useMediaQuery(query) {
 }
 export default function Hero() {
   const ref = useRef(null);
-  const isSmall = useMediaQuery("(max-width: 320px)");
+  const isSmall = useMediaQuery("(max-width: 600px)");
 
   const { scrollYProgress } = useScroll({
     target: ref,
