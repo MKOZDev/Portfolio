@@ -29,8 +29,8 @@ export default function Projects() {
                 <Image
                   className="rounded-t-xl w-full"
                   src={`/${item.image}`}
-                  width={590}
-                  height={598}
+                  width={614}
+                  height={342}
                   alt=""
                   priority
                 />
